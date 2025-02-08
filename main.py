@@ -2,15 +2,10 @@ import os
 import requests
 import sys
 
-API_KEY = "ViH7SiJScZEoAGk8mE88QYLQTuDYkITh"
+API_KEY = "CntQQfCou1HHhT3RlMnlqriifgIQyZrg"
 KEYWORD = " ".join(sys.argv[1:])
 
-if not KEYWORD:
-    print("Searching for a random wallpaper, if you want specific genre, enter a text after the command")
-    URL = "https://wallhaven.cc/api/v1/wallpapers?sorting=random"
-else:
-    print(f"Searching for: {KEYWORD}")
-    URL = f"https://wallhaven.cc/api/v1/search?q={KEYWORD}&sorting=random&apikey={API_KEY}"
+URL = f"https://wallhaven.cc/api/v1/search?q={KEYWORD}&sorting=random&apikey={API_KEY}"
 
 response = requests.get(URL)
 data = response.json()
