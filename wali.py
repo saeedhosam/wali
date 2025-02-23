@@ -19,7 +19,7 @@ print(data["data"][0]["path"])
 WALLPAPER_URL = data["data"][0]["path"]
 
 # Path to save the wallpaper
-WALLPAPER_PATH = os.path.expanduser("~/wali-wali/wallpaper.jpg")
+WALLPAPER_PATH = os.path.expanduser("~/wali/wallpaper.jpg")
 
 def download_wallpaper(url, save_path):
     """Download an image from the URL and save it locally."""
@@ -34,7 +34,7 @@ def download_wallpaper(url, save_path):
 
 def set_wallpaper_sway(image_path):
     """Set wallpaper on SwayWM using swaybg."""
-    os.system("swaymsg reload")
+    os.system("hyprctl reload")
 
 # Run the script
 if __name__ == "__main__":
